@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1d706b">
+  <title>IFD N° 12 | Mesas de Exámenes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Gestión institucional</p>
+        <h1 id="institutionTitle">Instituto de Formación Docente N° 12</h1>
+        <p id="appTitle">Cronograma de Mesas de Exámenes</p>
+      </div>
+      <div class="connection-pill" id="connectionState">Conectando...</div>
+    </header>
+
+    <nav class="tabs" aria-label="Módulos">
+      <button class="tab active" data-panel="dashboard">Resumen</button>
+      <button class="tab" data-panel="periodo">Período</button>
+      <button class="tab" data-panel="cronograma">Cronograma</button>
+      <button class="tab" data-panel="docentes">Docentes</button>
+      <button class="tab" data-panel="aulas">Aulas</button>
+      <button class="tab" data-panel="validaciones">Validaciones</button>
+      <button class="tab" data-panel="exportar">Exportar</button>
+    </nav>
+
+    <section class="panel active" id="panel-dashboard">
+      <div class="section-head"><div><p class="eyebrow">Estado actual</p><h2>Resumen del período</h2></div><button class="btn primary" id="refreshBtn">Actualizar</button></div>
+      <div class="metrics" id="metrics"><div class="empty">Cargando resumen...</div></div>
+      <div class="card prose"><h3>Modelo de trabajo</h3><p>El sistema parte de un cronograma institucional conocido, aplica las fechas del período, incorpora la Planta Funcional vigente y permite ajustar docentes, aulas y horarios sin alterar la base institucional.</p></div>
+    </section>
+
+    <section class="panel" id="panel-periodo">
+      <div class="section-head"><div><p class="eyebrow">Base + override</p><h2>Período activo</h2></div></div>
+      <div class="card" id="periodModel">Cargando período...</div>
+      <div class="card period-actions"><h3>Acciones</h3><div class="actions"><button class="btn ghost" id="loadConfigBtn">Leer configuración</button><button class="btn primary" id="savePeriodBtn">Guardar período</button><button class="btn ghost" id="generateBtn">Generar cronograma base</button></div><pre id="periodResult">Listo.</pre></div>
+    </section>
+
+    <section class="panel" id="panel-cronograma">
+      <div class="section-head"><div><p class="eyebrow">Vista operativa</p><h2>Cronograma</h2></div><input class="search" id="cronogramaFilter" placeholder="Buscar espacio, código, docente o aula"></div>
+      <div class="card table-card" id="cronogramaTable">Cargando cronograma...</div>
+    </section>
+
+    <section class="panel" id="panel-docentes"><div class="section-head"><div><p class="eyebrow">Asignaciones</p><h2>Docentes</h2></div></div><div class="card" id="docentesBox">Cargá el informe por docentes.</div><button class="btn primary" id="docentesBtn">Cargar informe</button></section>
+    <section class="panel" id="panel-aulas"><div class="section-head"><div><p class="eyebrow">Disponibilidad</p><h2>Aulas</h2></div></div><div class="card table-card" id="aulasBox">Las aulas se administran desde el backend.</div></section>
+    <section class="panel" id="panel-validaciones"><div class="section-head"><div><p class="eyebrow">Control</p><h2>Validaciones</h2></div></div><div class="card" id="validacionesBox">Cargando validaciones...</div></section>
+    <section class="panel" id="panel-exportar"><div class="section-head"><div><p class="eyebrow">Salida institucional</p><h2>Exportar</h2></div></div><div class="card"><p>Las exportaciones conservan el cronograma final y se preparan desde Apps Script.</p><div class="actions"><button class="btn primary" id="exportXlsxBtn">Preparar Excel</button><button class="btn ghost" id="exportPdfBtn">Preparar PDF</button></div><div id="exportBox"></div></div></section>
+
+    <footer>Frontend estático en GitHub Pages · Datos institucionales gestionados por Apps Script</footer>
+  </main>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
