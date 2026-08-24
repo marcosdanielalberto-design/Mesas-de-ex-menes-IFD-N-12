@@ -23,6 +23,7 @@
       <button class="tab" data-panel="periodo">Período</button>
       <button class="tab" data-panel="cronograma">Cronograma</button>
       <button class="tab" data-panel="docentes">Docentes</button>
+      <button class="tab" data-panel="planta">Planta Funcional</button>
       <button class="tab" data-panel="aulas">Aulas</button>
       <button class="tab" data-panel="validaciones">Validaciones</button>
       <button class="tab" data-panel="exportar">Exportar</button>
@@ -46,6 +47,15 @@
     </section>
 
     <section class="panel" id="panel-docentes"><div class="section-head"><div><p class="eyebrow">Asignaciones</p><h2>Docentes</h2></div></div><div class="card" id="docentesBox">Cargá el informe por docentes.</div><button class="btn primary" id="docentesBtn">Cargar informe</button></section>
+    <section class="panel" id="panel-planta">
+      <div class="section-head"><div><p class="eyebrow">Fuente de personal</p><h2>Planta Funcional</h2></div></div>
+      <div class="card import-card">
+        <div class="import-mark">PF</div>
+        <div><h3>Actualizar docentes desde Google Sheets</h3><p>La fuente oficial es la pestaña <strong>PlantaFuncional</strong> o <strong>Planta Funcional Actual</strong>. Actualizá allí la planilla y luego ejecutá las acciones en este orden.</p></div>
+        <div class="actions"><button class="btn primary" id="syncPlantaBtn">1. Sincronizar docentes</button><button class="btn ghost" id="rebuildSeleccionBtn">2. Reconstruir selección</button></div>
+        <pre id="plantaResult">No se ejecutaron acciones.</pre>
+      </div>
+    </section>
     <section class="panel" id="panel-aulas"><div class="section-head"><div><p class="eyebrow">Disponibilidad</p><h2>Aulas</h2></div></div><div class="card table-card" id="aulasBox">Las aulas se administran desde el backend.</div></section>
     <section class="panel" id="panel-validaciones"><div class="section-head"><div><p class="eyebrow">Control</p><h2>Validaciones</h2></div></div><div class="card" id="validacionesBox">Cargando validaciones...</div></section>
     <section class="panel" id="panel-exportar"><div class="section-head"><div><p class="eyebrow">Salida institucional</p><h2>Exportar</h2></div></div><div class="card"><p>Las exportaciones conservan el cronograma final y se preparan desde Apps Script.</p><div class="actions"><button class="btn primary" id="exportXlsxBtn">Preparar Excel</button><button class="btn ghost" id="exportPdfBtn">Preparar PDF</button></div><div id="exportBox"></div></div></section>
