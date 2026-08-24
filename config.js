@@ -1,5 +1,5 @@
 window.MESAS_PAGES_CONFIG = {
-  backendUrl: 'https://script.google.com/macros/s/AKfycbySjJ_WyQNQXazFWNT6G_D9SrX7k-nq4166v-nvazXTS8Ioc443L0cJIzl3dmZLxL4/exec',
+  backendUrl: 'https://script.google.com/macros/s/AKfycbwnKfOWIntqDxP323MPCBWi4hhWru--6wwa7drHOOTeGbZ9_vr3LsL5cuCTdZdiqPk_/exec',
   institution: 'Instituto de Formación Docente N° 12',
   title: 'Cronograma de Mesas de Exámenes',
 };
